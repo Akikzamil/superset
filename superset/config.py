@@ -308,10 +308,10 @@ AUTH_RATE_LIMIT = "5 per second"
 # GLOBALS FOR APP Builder
 # ------------------------------
 # Uncomment to setup Your App name
-APP_NAME = "Superset"
+APP_NAME = "Schertech"
 
 # Specify the App icon
-APP_ICON = "/static/assets/images/superset-logo-horiz.png"
+APP_ICON = "/static/assets/images/schertech-logo.png"
 
 # Specify where clicking the logo would take the user'
 # Default value of None will take you to '/superset/welcome'
@@ -490,7 +490,7 @@ DEFAULT_FEATURE_FLAGS: dict[str, bool] = {
     "DASHBOARD_VIRTUALIZATION": True,
     # This feature flag is stil in beta and is not recommended for production use.
     "GLOBAL_ASYNC_QUERIES": False,
-    "EMBEDDED_SUPERSET": False,
+    "EMBEDDED_SUPERSET": True,
     # Enables Alerts and reports new implementation
     "ALERT_REPORTS": False,
     "ALERT_REPORT_TABS": False,

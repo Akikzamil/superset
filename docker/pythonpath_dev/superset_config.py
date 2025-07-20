@@ -98,15 +98,34 @@ class CeleryConfig:
 
 CELERY_CONFIG = CeleryConfig
 
-FEATURE_FLAGS = {"ALERT_REPORTS": True}
+FEATURE_FLAGS = {"ALERT_REPORTS": True,"EMBEDDED_SUPERSET": True}
 ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
+TALISMAN_ENABLED=False
 WEBDRIVER_BASEURL = "http://superset:8088/"  # When using docker compose baseurl should be http://superset_app:8088/  # noqa: E501
 # The base URL for the email report hyperlinks.
 WEBDRIVER_BASEURL_USER_FRIENDLY = WEBDRIVER_BASEURL
 SQLLAB_CTAS_NO_LIMIT = True
 
+PUBLIC_ROLE_LIKE = "Gamma"
+ENABLE_PROXY_FIX = True
+HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
+ENABLE_CORS = True
+CORS_OPTIONS = {
+'supports_credentials': True,
+'allow_headers': ['*'],
+'resources':['*'],'origins': ['*']
+}
+
+
 log_level_text = os.getenv("SUPERSET_LOG_LEVEL", "INFO")
 LOG_LEVEL = getattr(logging, log_level_text.upper(), logging.INFO)
+
+APP_NAME = "Schertech"
+WTF_CSRF_ENABLED=False
+
+# Specify the App icon
+# APP_ICON = "/static/assets/images/schertech-logo.png"
+# FAVICONS = [{"href": "/static/assets/images/favicon.png"}]
 
 if os.getenv("CYPRESS_CONFIG") == "true":
     # When running the service as a cypress backend, we need to import the config
